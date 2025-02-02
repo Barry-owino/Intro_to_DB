@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import mysql.connector
 from mysql.connector import Error
 
@@ -7,8 +6,8 @@ def create_database():
         # Connect to MySQL Server (without specifying database)
         connection = mysql.connector.connect(
             host='localhost',
-            user='root',    
-            password='#######'  
+            user='root',
+            password='#####'  
         )
         
         if connection.is_connected():
@@ -28,7 +27,7 @@ def create_database():
             cursor.close()
             connection.close()
 
-    except Error as e:
+    except mysql.connector.Error as e:
         print(f"Error: {e}")
         if connection.is_connected():
             connection.close()
